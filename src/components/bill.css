@@ -24,7 +24,7 @@ table th {
 
 .bill-card {
     border: 1px solid #c9c9c9;
-    width: 40%;
+
 }
 
 .card-p {
@@ -43,12 +43,52 @@ table th {
     margin: 0;
 }
 
+.bill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+
+.card-quants {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
+    gap: 30px;
+}
+
+
+@media (max-width:800px) {
+    .bill-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width:600px) {
+
+    table th,
+    td {
+        font-size: 9px;
+        max-width: 15px;
+    }
+
+    .bill-card p,
+    div {
+        font-size: 14px;
+    }
+
+    .card-quants {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 30px;
+    }
+}
+
 .cardBody>div {
-    width: 45%;
+    width: 100%;
     border: 1px solid;
     height: 50px;
 
 }
+
+
 
 .cardBodychild div {
     height: 100%;

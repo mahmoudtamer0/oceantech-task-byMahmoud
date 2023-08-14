@@ -88,13 +88,13 @@ function Fullbill(props) {
 
                         </tbody>
                     </table></Container >
-                <Container className='d-flex'>
+                <Container className='bill-container'>
                     <div className='bill-card m-auto'>
                         <div className='card-p card-title d-flex justify-content-between align-items-center'>
                             <p> اجمالي الفاتورة</p>
                             <p> {totalProdsPrice} ج.م</p>
                         </div>
-                        <div className='card-p cardBody d-flex justify-content-between align-items-center'>
+                        <div className='card-p card-quants cardBody justify-content-between align-items-center'>
                             <div className='cardBodychild d-flex d-flex justify-content-between align-items-center'>
                                 <div>عدد القطع</div>
                                 <div>{totalCounts}</div>

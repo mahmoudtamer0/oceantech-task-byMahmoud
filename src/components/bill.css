@@ -1,0 +1,63 @@
+.form-main-grid {
+
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.main-bill-form {
+    margin-bottom: 40px;
+}
+
+.second-main-form {
+    gap: 12px;
+    border-top: 3px solid #8f8ffd85;
+    margin-top: 15px;
+    padding-top: 20px;
+}
+
+table th {
+    background-color: #5b81af !important;
+    border-left: 4px solid white !important;
+    color: white !important;
+}
+
+.bill-card {
+    border: 1px solid #c9c9c9;
+    width: 40%;
+}
+
+.card-p {
+    padding: 15px;
+}
+
+.card-title {
+    background: linear-gradient(45deg, #5b81af, #1d547c);
+    color: white;
+
+}
+
+.card-title p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cardBody>div {
+    width: 45%;
+    border: 1px solid;
+    height: 50px;
+
+}
+
+.cardBodychild div {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardBodychild div:first-of-type {
+    background-color: #c9c9c9;
+}

@@ -1,0 +1,22 @@
+{
+    "bills": [
+        {
+            "id": 1,
+            "item_code": "213feada",
+            "item_name": "علبة دبنة",
+            "price": 23,
+            "quantity": 45,
+            "house": "الرئيسي",
+            "discount": 0
+        },
+        {
+            "item_code": "ddad231",
+            "item_name": "باكت شاي",
+            "price": "8",
+            "quantity": "10",
+            "house": "الرئيسي",
+            "discount": 0,
+            "id": 2
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/oceantech-task-byMahmoud/static/css/main.fffdaf2f.css",
+    "main.js": "/oceantech-task-byMahmoud/static/js/main.8d2b06c6.js",
+    "static/js/787.a5a00b74.chunk.js": "/oceantech-task-byMahmoud/static/js/787.a5a00b74.chunk.js",
+    "index.html": "/oceantech-task-byMahmoud/index.html",
+    "main.fffdaf2f.css.map": "/oceantech-task-byMahmoud/static/css/main.fffdaf2f.css.map",
+    "main.8d2b06c6.js.map": "/oceantech-task-byMahmoud/static/js/main.8d2b06c6.js.map",
+    "787.a5a00b74.chunk.js.map": "/oceantech-task-byMahmoud/static/js/787.a5a00b74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fffdaf2f.css",
+    "static/js/main.8d2b06c6.js"
+  ]
+}

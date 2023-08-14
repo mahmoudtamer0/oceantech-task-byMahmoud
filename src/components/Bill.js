@@ -15,19 +15,16 @@ const Bill = (props) => {
     const [store, setStore] = useState('الرئيسي');
     const [buyerName, setBuyerName] = useState('');
     const [sellerName, setSellerName] = useState('');
-    const [disable, setDisable] = useState(false)
     const [accept, setAccept] = useState(false);
 
 
-    useEffect(() => {
-        bills.length >= 1 ? setDisable(true) : setDisable(false);
-    }, [bills])
+
 
     async function handlsubmit(e) {
         let flag = true;
         e.preventDefault();
         setAccept(true);
-        if (itemCode === '' || itemName == "" || itemPrice == '' || quantity === "") {
+        if (itemCode === '' || sellerName == "" || buyerName == "" || itemName == "" || itemPrice == '' || quantity === "") {
             flag = false
         } else flag = true
         try {
@@ -80,7 +77,7 @@ const Bill = (props) => {
                             <Form.Group className='mb-3'>
                                 <Form.Label htmlFor='name'> اسم البائع: </Form.Label>
                                 <Form.Control
-                                    disabled={disable}
+
                                     value={sellerName}
                                     onChange={(e) => setSellerName(e.target.value)}
                                     style={{ height: '38px' }}
@@ -121,7 +118,7 @@ const Bill = (props) => {
                                 <Form.Label htmlFor='custname'> اسم العميل : </Form.Label>
                                 <Form.Control
                                     value={buyerName}
-                                    disabled={disable}
+
                                     onChange={(e) => setBuyerName(e.target.value)}
                                     style={{ height: '38px' }} type='text'
                                     id='custname'

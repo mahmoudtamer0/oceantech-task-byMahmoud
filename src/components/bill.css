@@ -18,7 +18,7 @@
 
 table th {
     background-color: #5b81af !important;
-    border-left: 4px solid white !important;
+    border-left: 4px solid white;
     color: white !important;
 }
 
@@ -43,10 +43,10 @@ table th {
     margin: 0;
 }
 
-.bill-container {
+/* .bill-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-}
+} */
 
 .card-quants {
     display: grid;
@@ -54,19 +54,16 @@ table th {
     gap: 30px;
 }
 
-
-@media (max-width:800px) {
-    .bill-container {
-        gap: 40px;
-    }
-}
-
 @media (max-width:600px) {
 
     table th,
     td {
         font-size: 9px;
-        max-width: 15px;
+        max-width: 31px;
+    }
+
+    table th {
+        border: none;
     }
 
     .bill-card p,

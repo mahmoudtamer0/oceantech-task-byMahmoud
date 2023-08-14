@@ -46,7 +46,7 @@ function Fullbill(props) {
                         return (
                             <div key={bill.id}>
 
-                                {`منتج ${index + 1}) `} اسم العميل: {bill.buyer_name}  اسم البائع: {bill.seller_name} تاريخ الفاتورة : {bill.bill_date}
+                                {`منتج ${index + 1}) `} اسم العميل: <span style={{ fontWeight: "bold" }}>{bill.buyer_name}</span>/  اسم البائع: <span style={{ fontWeight: "bold" }}>{bill.seller_name}</span>/ تاريخ الفاتورة : <span style={{ fontWeight: "bold" }}>{bill.bill_date}</span>/
                             </div>
                         )
                     })}
@@ -88,95 +88,97 @@ function Fullbill(props) {
 
                         </tbody>
                     </table></Container >
-                <Container className='bill-container'>
-                    <div className='bill-card m-auto'>
-                        <div className='card-p card-title d-flex justify-content-between align-items-center'>
-                            <p> اجمالي الفاتورة</p>
-                            <p> {totalProdsPrice} ج.م</p>
+                <Container >
+                    <div className='bill-container row justify-content-between'>
+                        <div className='bill-card m-auto col-lg-5 col-sm-12 col-12'>
+                            <div className='card-p card-title d-flex justify-content-between align-items-center'>
+                                <p> اجمالي الفاتورة</p>
+                                <p> {totalProdsPrice} ج.م</p>
+                            </div>
+                            <div className='card-p card-quants cardBody justify-content-between align-items-center'>
+                                <div className='cardBodychild d-flex d-flex justify-content-between align-items-center'>
+                                    <div>عدد القطع</div>
+                                    <div>{totalCounts}</div>
+                                </div>
+                                <div className='cardBodychild d-flex d-flex justify-content-between align-items-center'>
+                                    <div>عدد الاصناف</div>
+                                    <div>{bills.length}</div>
+                                </div>
+                            </div>
+                            <div className='card-p d-flex justify-content-between align-items-center'>
+                                <div>طريقة الدفع</div>
+                                <div>
+                                    <label htmlFor='cash'> نقدي</label>
+                                    <input
+                                        ref={cashRef}
+                                        type='radio'
+                                        id='cash'
+                                        name='payment'
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor='installment'> اجل</label>
+                                    <input ref={installmentRef} type='radio' id='installment' name='payment' />
+                                </div>
+                            </div>
+                            <div className='card-p d-flex justify-content-between align-items-center'>
+                                <div>
+                                    <label className='mb-2' htmlFor='priceperone'>خصومات؟ (ج.م): </label>
+                                    <Form.Control
+                                        onChange={(e) => setDiscount(e.target.value)}
+                                        style={{ height: '25px' }}
+                                        type='number'
+                                        id='priceperone' />
+                                </div>
+
+                                <div>
+                                    <label className='mb-2' htmlFor='priceperone'>تفاصيل الخصومات :</label>
+                                    <Form.Control
+                                        style={{ height: '25px' }}
+                                        type='text-area'
+                                        id='priceperone' />
+                                </div>
+                            </div>
                         </div>
-                        <div className='card-p card-quants cardBody justify-content-between align-items-center'>
-                            <div className='cardBodychild d-flex d-flex justify-content-between align-items-center'>
-                                <div>عدد القطع</div>
-                                <div>{totalCounts}</div>
+                        <div className='bill-card m-auto col-lg-5 col-sm-12 col-12'>
+                            <div className='card-p card-title d-flex justify-content-between align-items-center'>
+                                <p> صافي الفاتورة</p>
+                                <p> {totalAfterDisc} ج.م</p>
                             </div>
-                            <div className='cardBodychild d-flex d-flex justify-content-between align-items-center'>
-                                <div>عدد الاصناف</div>
-                                <div>{bills.length}</div>
+                            <div className='card-p  d-flex justify-content-between align-items-center'>
+                                <div>
+                                    <label className='mb-2' htmlFor='priceperone'> المدفوع :</label>
+                                    <Form.Control
+                                        onChange={(e) => setPayed(e.target.value)}
+                                        style={{ height: '25px' }}
+                                        type='number'
+                                        id='priceperone' />
+                                </div>
+                                <div>
+                                    <label className='mb-2' htmlFor='remains'> المتبقي :</label>
+                                    <Form.Control
+                                        value={Theremain}
+                                        disabled={true}
+                                        style={{ height: '25px' }}
+                                        type='number'
+                                        id='remains' />
+                                </div>
                             </div>
-                        </div>
-                        <div className='card-p d-flex justify-content-between align-items-center'>
-                            <div>طريقة الدفع</div>
-                            <div>
-                                <label htmlFor='cash'> نقدي</label>
-                                <input
-                                    ref={cashRef}
-                                    type='radio'
-                                    id='cash'
-                                    name='payment'
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor='installment'> اجل</label>
-                                <input ref={installmentRef} type='radio' id='installment' name='payment' />
-                            </div>
-                        </div>
-                        <div className='card-p d-flex justify-content-between align-items-center'>
-                            <div>
-                                <label className='mb-2' htmlFor='priceperone'>خصومات؟ (ج.م): </label>
-                                <Form.Control
-                                    onChange={(e) => setDiscount(e.target.value)}
-                                    style={{ height: '25px' }}
-                                    type='number'
-                                    id='priceperone' />
+                            <div className='card-p d-flex justify-content-between align-items-center'>
+                                <div>
+                                    <input type='checkbox' id='taxbill' name='payment' />
+                                    <label className='m-2' htmlFor='taxbill'> فاطورة ضريبية</label>
+                                </div>
+                                <div>
+                                    <label className='mb-2' htmlFor='taxnum'> رقم الفاتورة الضريبية :</label>
+                                    <Form.Control
+                                        style={{ height: '25px' }}
+                                        type='number'
+                                        id='taxnum' />
+                                </div>
                             </div>
 
-                            <div>
-                                <label className='mb-2' htmlFor='priceperone'>تفاصيل الخصومات :</label>
-                                <Form.Control
-                                    style={{ height: '25px' }}
-                                    type='text-area'
-                                    id='priceperone' />
-                            </div>
                         </div>
-                    </div>
-                    <div className='bill-card m-auto'>
-                        <div className='card-p card-title d-flex justify-content-between align-items-center'>
-                            <p> صافي الفاتورة</p>
-                            <p> {totalAfterDisc} ج.م</p>
-                        </div>
-                        <div className='card-p  d-flex justify-content-between align-items-center'>
-                            <div>
-                                <label className='mb-2' htmlFor='priceperone'> المدفوع :</label>
-                                <Form.Control
-                                    onChange={(e) => setPayed(e.target.value)}
-                                    style={{ height: '25px' }}
-                                    type='number'
-                                    id='priceperone' />
-                            </div>
-                            <div>
-                                <label className='mb-2' htmlFor='remains'> المتبقي :</label>
-                                <Form.Control
-                                    value={Theremain}
-                                    disabled={true}
-                                    style={{ height: '25px' }}
-                                    type='number'
-                                    id='remains' />
-                            </div>
-                        </div>
-                        <div className='card-p d-flex justify-content-between align-items-center'>
-                            <div>
-                                <input type='checkbox' id='taxbill' name='payment' />
-                                <label className='m-2' htmlFor='taxbill'> فاطورة ضريبية</label>
-                            </div>
-                            <div>
-                                <label className='mb-2' htmlFor='taxnum'> رقم الفاتورة الضريبية :</label>
-                                <Form.Control
-                                    style={{ height: '25px' }}
-                                    type='number'
-                                    id='taxnum' />
-                            </div>
-                        </div>
-
                     </div>
                 </Container >
 

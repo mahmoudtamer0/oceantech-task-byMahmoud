@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/oceantech-task-byMahmoud/static/css/main.22307a71.css",
-    "main.js": "/oceantech-task-byMahmoud/static/js/main.91a2bb12.js",
+    "main.css": "/oceantech-task-byMahmoud/static/css/main.bae364fd.css",
+    "main.js": "/oceantech-task-byMahmoud/static/js/main.5a6827ca.js",
     "static/js/787.a5a00b74.chunk.js": "/oceantech-task-byMahmoud/static/js/787.a5a00b74.chunk.js",
     "index.html": "/oceantech-task-byMahmoud/index.html",
-    "main.22307a71.css.map": "/oceantech-task-byMahmoud/static/css/main.22307a71.css.map",
-    "main.91a2bb12.js.map": "/oceantech-task-byMahmoud/static/js/main.91a2bb12.js.map",
+    "main.bae364fd.css.map": "/oceantech-task-byMahmoud/static/css/main.bae364fd.css.map",
+    "main.5a6827ca.js.map": "/oceantech-task-byMahmoud/static/js/main.5a6827ca.js.map",
     "787.a5a00b74.chunk.js.map": "/oceantech-task-byMahmoud/static/js/787.a5a00b74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22307a71.css",
-    "static/js/main.91a2bb12.js"
+    "static/css/main.bae364fd.css",
+    "static/js/main.5a6827ca.js"
   ]
 }
